@@ -1,5 +1,6 @@
 var startButton = document.querySelector('.start');
 var seconds;
+var timerSecs = 75;
 var userScore;
 var displayTimer = 1;
 
@@ -11,25 +12,59 @@ theArray = [
     qFour = ["A very useful tool used during development and debugging for printing content to the debugger is:", "JavaScript", 'terminal/bash', "for loops", 'console.log']
 ]
 
+var questArray = [theArray[0][0], theArray[1][0], theArray[2][0], theArray[3][0], theArray[4][0]];
+var questArrayIndex = 0;
+var correctAns = document.getElementById("correctans");
+var wrongAns = document.getElementById("wrongans");
+var viewHighScores = document.querySelector('.highscores');
 
+function populateQuiz() {
+
+}
+
+function checkAns () {
+
+}
+
+function nextQuest() {
+
+}
 
 function startQuiz() {
     time(10);
-    question
+    question;
+    populateQuiz();
+    timerStart();
 }
 
-function time(secondsLeft){
-    let timerInterval = setInterval(function() {
+function timerStart(){
+    seconds = setInterval(function() {
         secondsLeft--;
-        timeEl.textContent = secondsLeft + " seconds left.";
+        countdown.textContent = secondsLeft;
 
-        if(secondsLeft === 0) {
-            clearInterval(timerInterval);
-            sendMessage();
+        if(secondsLeft === 0 || secondsLeft < 1) {
+            clearInterval(seconds);
+            alert("Time ran out! Game over.");
+            lastQuestion();
         }
     }, 1000)
 }
 
+function rightAns() {
+    correctAnswer.innerText = "Correct";
+    nextQustion();
+}
 
+function wrongAns() {
+    wrongAnswer.innerText = "Wrong";
+    nextQustion();
+    timerSecs -= 10;
+}
+
+function finalQuestion() {
+
+}
+
+var saveData = document.querySelector()
 
 startButton.addEventListener("click", startQuiz);
