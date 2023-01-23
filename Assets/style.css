@@ -1,0 +1,61 @@
+
+
+.timer {
+    display: inline;
+    margin-right: 1px;
+    
+}
+
+.highscores {
+    display: inline;
+}
+
+.countdown {
+    display: inline;
+}
+
+.card-container {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+}
+
+body {
+    margin: 0;
+    font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+.start {
+    background-color: rgb(138, 9, 138);
+    color: white;
+    border: none;
+    border-radius: 7%;
+    margin: 3px;
+    display: block;
+}
+
+.card-container {
+    text-align: center;
+}
+
+p {
+    margin-top: 0;
+}
+
+.hide {
+    display:none;
+}

@@ -12,30 +12,27 @@
 <body>
     <header>
         <div>
-            <p class="timer">Time:</p>
-            <p class="countdown">0</p>
-            <p class="highscores">View HighScores</p>
+            <p class="timer">Time:<span id="time">0</span></p>
+            <p class="highscores"> <a href="highscores.html">View HighScores</a></p>
         </div>
     </header>
-    <div class="card">
+    <div id="card-container">
         <h1>Coding Quiz Challenge</h1>
         <p>Try to answer the following code-related questions within the time limit.
             Keep in mind that incorrect answers will penalize your scoretime by ten seconds!</p>
         <button class="start">Start Quiz!</button>
     </div>
-    <div class="card1" id="questionsbox">
-        <p>Question</p>
-        <div class="button">
-            <button
-        </div>
-
+    <div class="hide" id="questionsbox">
+        <h2 id="question-title"></h2>
+        <div class="choices" id="choices"></div>
     </div>
-    <footer class="footer" id="footer">
-        <div class="horRow">
-            <p class="correct" id="correctAnswer"></p>
-            <p class="wrong" id="wrongAnswer"></p>
-        </div>
-    </footer>
+    <div class="hide" id="end-screen">
+        <h2>Quiz Complete</h2>
+        <p>Your final score is <span id="final-score"></span></p>
+        <p>Enter Initials: <input type="text" id="initials">
+        <button id="submit">Submit</button></p>
+    </div>
+    <div class="feedback hide" id="feedback"></div>
 
     <script src="./Assets/script.js"></script>
 </body>
