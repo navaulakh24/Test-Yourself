@@ -8,16 +8,18 @@ var choicesEl = document.querySelector("#choices");
 var submitBtn = document.querySelector("#submit");
 var initialsEl = document.querySelector("#initials");
 var feedbackEl = document.querySelector("#feedback");
+var highScoreEl = document.querySelector("#end-screen");
+var finalScoreEl = document.querySelector("#final-score");
 
 
 var theArray = [
     {
-    question:"Commonly used data types DO NOT include:",
-    choices: ["strings", "booleans", "alerts", 'numbers'],
-    answer: "alerts"
+        question: "Commonly used data types DO NOT include:",
+        choices: ["strings", "booleans", "alerts", 'numbers'],
+        answer: "alerts"
     },
     {
-        question:"The condition in an if statement is enclosed within ____.",
+        question: "The condition in an if statement is enclosed within ____.",
         choices: ["quotes", 'curly brackets', "parenthese", 'square brackets'],
         answer: "parenthese"
     },
@@ -27,27 +29,27 @@ var theArray = [
         answer: 'all of the above'
     },
     {
-        question:"A very useful tool used during development and debugging for printing content to the console is:",
-        choices:["JavaScript", 'terminal/bash', "for loops", 'console.log'],
+        question: "A very useful tool used during development and debugging for printing content to the console is:",
+        choices: ["JavaScript", 'terminal/bash', "for loops", 'console.log'],
         answer: 'console.log'
     }
 ]
 
 function startQuiz() {
-    var startScreenEl = document.querySelector("#card-container");
+    var startScreenEl = document.querySelector(".card-container");
     startScreenEl.setAttribute("class", "hide");
     questionsEl.removeAttribute("class");
-    seconds= setInterval(timerStart, 1000);
+    seconds = setInterval(timerStart, 1000);
     timerEl.textContent = timerSecs;
     populateQuiz();
 }
 
 function populateQuiz() {
-    var currentQuestion = theArray [questArrayIndex];
+    var currentQuestion = theArray[questArrayIndex];
     var titleEl = document.querySelector("#question-title");
     titleEl.textContent = currentQuestion.question;
-    choicesEl.innerHTML ="";
-    for (var i = 0; i < currentQuestion.choices.length; i++ ){
+    choicesEl.innerHTML = "";
+    for (var i = 0; i < currentQuestion.choices.length; i++) {
         var choice = currentQuestion.choices[i];
         var choiceBtn = document.createElement("button");
         choiceBtn.setAttribute("class", "choice");
@@ -57,8 +59,8 @@ function populateQuiz() {
     }
 }
 
-function checkAns (event) {
-    var buttonEl= event.target;
+function checkAns(event) {
+    var buttonEl = event.target;
     if (!buttonEl.matches(".choice")) {
         return;
     }
@@ -74,32 +76,47 @@ function checkAns (event) {
         feedbackEl.textContent = "Correct!";
     }
     feedbackEl.setAttribute("class", "feedback");
-    setTimeout(function(){
+    setTimeout(function () {
         feedbackEl.setAttribute("class", "feedback hide");
     }, 2000)
-    questArrayIndex ++;
-    if (timerSecs <= 0 || questArrayIndex === theArray.length){
+    questArrayIndex++;
+    if (timerSecs <= 0 || questArrayIndex === theArray.length) {
         endQuiz();
     } else {
         populateQuiz();
     }
 }
 // endQuiz function
-// function to save highScore
-// eventListeners for submit button, start quiz button, choices button
-// highscores.html page, javascript page
-function timerStart(){
-        timerSecs--;
-        timerEl.textContent = timerSecs;
-
-        if(timerSecs <= 0) {
-          endQuiz();
-        }
+function endQuiz() {
+    clearInterval(seconds);
+    questionsEl.setAttribute("class", "hide");
+    highScoreEl.removeAttribute("class");
+    finalScoreEl.textContent = timerSecs;
 }
 
-var saveData = document.querySelector()
+// function to save highScore
+function savehighscore() {
+    localStorage.setItem("score", timerSecs);
+    window.location.href = "./highscores.html";
+}
 
-startButton.addEventListener("click", .start);
+// highscores.html page, javascript page
+
+
+
+function timerStart() {
+    timerSecs--;
+    timerEl.textContent = timerSecs;
+
+    if (timerSecs <= 0) {
+        endQuiz();
+    }
+}
+
+// var saveData = document.querySelector()
+
+// eventListeners for submit button, start quiz button, choices button
+startButton.addEventListener("click", startQuiz);
 //checkAns
 choicesEl.addEventListener('click', checkAns);
 submitBtn.addEventListener('click', savehighscore);
