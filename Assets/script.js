@@ -108,35 +108,7 @@ function timerStart() {
         endQuiz();
     }
 }
-
-// var saveData = document.querySelector()
-
 // eventListeners for submit button, start quiz button, choices button
 startButton.addEventListener("click", startQuiz);
-//checkAns
 choicesEl.addEventListener('click', checkAns);
 submitBtn.addEventListener('click', savehighscore);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// info = JSON.parse(localStorage.getItem('score')) || [];
-// info.push(userObj);
-// localStorage.setItem("score", JSON.stringify(info));
