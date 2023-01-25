@@ -22,5 +22,13 @@ This is a quiz that uses HTMl, CSS, and Javascript to collect user data to deter
 - WHEN the game is over
 - THEN I can save my initials and my score
 
-##Deployment Link
+![Webpage](./Assets/images/Screenshot%20(6).png)
+![Webpage](./Assets/images/Screenshot%20(8).png)
 
+## Deployment Link
+
+[Web Accessibility]()
+
+## License
+
+Refer to Repository pages for license.md.
