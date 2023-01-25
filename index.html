@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Quiz</title>
     <link rel="stylesheet" href="./Assets/style.css">
+    <link rel="highscores" href="./highscores.html">
 </head>
 
 <body>
     <header>
         <div>
             <p class="timer">Time:<span id="time">0</span></p>
-            <p class="highscores"> <a href="highscores.html">View HighScores</a></p>
+            <p class="highscores"> <a id= view-score href="highscores.html">View HighScores</a></p>
         </div>
     </header>
     <div class="card-container">
@@ -24,7 +25,7 @@
     </div>
     <div class="hide" id="questionsbox">
         <h2 id="question-title"></h2>
-        <div class="choices" id="choices"></div>
+        <div class="options" id="choices"></div>
     </div>
     <div class="hide" id="end-screen">
         <h2>Quiz Complete</h2>

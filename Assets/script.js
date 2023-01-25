@@ -100,10 +100,6 @@ function savehighscore() {
     window.location.href = "./highscores.html";
 }
 
-// highscores.html page, javascript page
-
-
-
 function timerStart() {
     timerSecs--;
     timerEl.textContent = timerSecs;
@@ -120,3 +116,27 @@ startButton.addEventListener("click", startQuiz);
 //checkAns
 choicesEl.addEventListener('click', checkAns);
 submitBtn.addEventListener('click', savehighscore);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// info = JSON.parse(localStorage.getItem('score')) || [];
+// info.push(userObj);
+// localStorage.setItem("score", JSON.stringify(info));

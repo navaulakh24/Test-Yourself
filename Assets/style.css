@@ -1,13 +1,17 @@
-
-
 .timer {
-    display: inline;
     margin-right: 1px;
-    
+    text-align: right;
 }
 
-.highscores {
+header div {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+#view-score {
     display: inline;
+    text-decoration: none;
 }
 
 .countdown {
@@ -25,13 +29,13 @@
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
+    border: 1px solid rgba(0, 0, 0, .125);
     border-radius: 0.25rem;
 }
 
 body {
     margin: 0;
-    font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -41,7 +45,7 @@ body {
 }
 
 .start {
-    background-color: rgb(138, 9, 138);
+    background-color: rgb(148, 26, 148);
     color: white;
     border: none;
     border-radius: 7%;
@@ -58,5 +62,32 @@ p {
 }
 
 .hide {
-    display:none;
+    display: none;
+}
+
+.choice {
+    background-color: rgb(138, 9, 138);
+    color: white;
+    border: none;
+    border-radius: 7%;
+    margin: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: center;
+}
+
+div .options {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#question-title {
+    text-align: center;
+}
+
+.check {
+
 }
